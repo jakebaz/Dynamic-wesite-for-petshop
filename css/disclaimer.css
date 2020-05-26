@@ -1,0 +1,47 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #575757; 
+	padding-top: 150px;
+	font-family: Helvetica Narrow, sans-serif;
+	text-align: center;
+}
+
+body h1 {
+	font-size: 80px;
+	text-decoration: underline;
+	color: #fa0c0c;
+}
+
+body p {
+	font-size: 20px;
+	color: white;
+	padding-top: 20px;
+}
+
+.nav {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	color: white;
+}
+
+.nav button {
+	background-color: #fa0c0c;
+	font-size: 50px;
+	padding:10px; 
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+
+.nav a {
+	text-decoration: none;
+	color: white;
+}
+
+.nav a:visited {
+	color: white;
+}

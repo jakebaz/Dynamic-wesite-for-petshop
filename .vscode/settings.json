@@ -1,0 +1,31 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "php/._home.php": true,
+        "**/._home.php": true,
+        "._home.php": true,
+        "php/._register_form.php": true,
+        "**/._register_form.php": true,
+        "._register_form.php": true,
+        "php/._register.php": true,
+        "**/._register.php": true,
+        "._register.php": true,
+        "php/._login.php": true,
+        "**/._login.php": true,
+        "._login.php": true,
+        "php/._login_form.php": true,
+        "**/._login_form.php": true,
+        "._login_form.php": true,
+        "css/._styles.css": true,
+        "**/._styles.css": true,
+        "._styles.css": true,
+        "css/._disclaimer.css": true,
+        "**/._disclaimer.css": true,
+        "._disclaimer.css": true
+    },
+    "explorerExclude.backup": null
+}
