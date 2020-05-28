@@ -327,5 +327,34 @@
 	padding-top: 15px;
 }
 
+.main-product{
+	position: absolute;
+	display: inline-block;
+	width: 75%;
+}
 
+.product-left {
+	float: left;
+	width: 50%;
+	padding-top: 50px;
+}
 
+.product-left h3 {
+	padding: 10px;
+}
+
+.product-left img {
+	width: 100%;
+	border: rgb(66, 66, 66) solid 2px;
+}
+
+.product-right {
+	position: absolute;
+	display: inline-block;
+	padding: 50px 20px 20px 20px;
+}
+
+.buy-section {
+	padding: 70px 0 20px 30px;
+	line-height: 2rem;
+}
