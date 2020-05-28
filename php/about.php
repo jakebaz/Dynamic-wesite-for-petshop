@@ -90,11 +90,21 @@
 							</figure>
 						</div>
 					</div>	
-				
-				<br>
-
 			</div>
 		</div>
 	</div>
+	<footer class="footer">
+		<div class="footer-address">
+			<h6>Head Office Address:</h6>
+			<ul>
+				<li>10 Quayside Rd</li>
+				<li>Newcastle Upon Tyne</li>
+				<li>Tyne & Wear</li>
+				<li>United Kingdom</li>
+				<li>NE1 3FF</li>
+				<li>Copyright &copy; 2020</li>
+			</ul>
+		</div>
+	</footer>
 </body>
 </html>
