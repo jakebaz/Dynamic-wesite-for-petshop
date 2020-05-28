@@ -1,8 +1,10 @@
+<?php include ('classes.php');?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
 <head>
 	<title>Pet Supplies|Home</title>
 	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="pets, pet shop, pet supplies"/>
 	<meta name="author" content="Jacob Bazin"/>
 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
@@ -47,7 +49,30 @@
 				</ul>
 			</div>
 			<div class="main">
-
+				<div class="display-products">
+					<div id="display-header">
+						<h4>Products</h4>
+					</div>
+					<div id="main-display">
+						<?php
+							$product = new DisplayProduct($dbconn);
+							$product->getData();
+							foreach($product->allProducts as $val){
+								print_r(
+									'<div class="home-product">
+										<div class="prod-top-section>
+											<h6 class="prod-title">'.$val[0].'</h6>
+											<span class="prod-brand">by '.$val[1].'</span>
+										</div>
+										<div class="prod-bottom-section">	
+											<img src='.$val[3].' alt="'.$val[0].'">	
+											<span class="prod-price">£'.$val[2].'</span>
+										</div>
+									</div>');				
+							}
+						?>
+					</div>
+				</div>
 
 
 			</div>

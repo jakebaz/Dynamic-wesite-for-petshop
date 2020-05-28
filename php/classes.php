@@ -1,4 +1,4 @@
-d<?php
+<?php
 require('../core/connect.php'); //connection to database stored in this file
 
 class UserLogin{
@@ -39,15 +39,10 @@ class UserLogin{
                     $_SESSION['loggedInUser'] = $this->uname; //set a session variable so that the website keeps user logged in
                     header('Location: home.php');
                 } 
-
-
-
-            }
-                
-            }    
-                    
-        }        
-    }
+            }      
+        }                
+    }        
+}
 
    
 
@@ -165,5 +160,34 @@ class UserRegister{
                 }
             }
         }
+    }
+}
+
+class DisplayProduct{
+    public function __construct($dbconn){
+        $this->dbconn = $dbconn;
+        $this->allProducts = [];
+    }
+
+    public function getData(){
+        $queryProduct = "SELECT * FROM product;";
+        $productStmt = $this->dbconn->stmt_init();
+        if (!$productStmt->prepare($queryProduct)){
+            echo "<div class='register-error'>Nothing to show</div>"; //if statement fails echo error message
+            exit();
+        } else {
+            $productStmt->execute();
+            $result = $productStmt->get_result();
+            while($row = $result->fetch_row()){
+                $prodName = $row[1];
+                $prodBrand = $row[2];
+                $prodPrice = $row[6];
+                $prodImg = $row[7];
+                $product = [$prodName, $prodBrand, $prodPrice, $prodImg];
+                array_push($this->allProducts, $product);
+            }
+            //print_r($this->allProducts[67]);
+            
+        }    
     }
 }
