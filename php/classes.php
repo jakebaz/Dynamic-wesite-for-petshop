@@ -166,13 +166,12 @@ class UserRegister{
 class DisplayProduct{
     public function __construct($dbconn){
         $this->dbconn = $dbconn;
-        $this->allProducts = [];
+        $this->featuredProducts = [];
     }
 
-    public function getData(){
-        $queryProduct = "SELECT * FROM product;";
+    public function getFeaturedProducts($sql){ //takes sql statement as parameter
         $productStmt = $this->dbconn->stmt_init();
-        if (!$productStmt->prepare($queryProduct)){
+        if (!$productStmt->prepare($sql)){
             echo "<div class='register-error'>Nothing to show</div>"; //if statement fails echo error message
             exit();
         } else {
@@ -183,11 +182,26 @@ class DisplayProduct{
                 $prodBrand = $row[2];
                 $prodPrice = $row[6];
                 $prodImg = $row[7];
-                $product = [$prodName, $prodBrand, $prodPrice, $prodImg];
-                array_push($this->allProducts, $product);
+                $product = [$prodName, $prodBrand, $prodPrice, $prodImg]; //append required data to an array
+                array_push($this->featuredProducts, $product);//append that array to another array that can be displayed
             }
-            //print_r($this->allProducts[67]);
-            
         }    
     }
-}
+   /*
+    public function getFeaturedToys(){
+        $queryToyProducts = "SELECT * FROM product WHERE productID = 38 OR productID = 41 OR productID = 31
+        OR productID = 33 OR productID = 42;"
+        $toyStmt = $this->dbconn->stmt_init();
+        if(!$toyStmt->prepare($queryToyProducts)){
+           echo "<div class='register-error'>Nothing to show</div>";
+           exit();
+        } else{
+            $toyStmt->execute();
+            $toyResult = $toyStmt->get_result();
+            while($row = $result->fetch_row()){
+                $toyBrand
+            }
+        }
+    }   */     
+}    
+  
