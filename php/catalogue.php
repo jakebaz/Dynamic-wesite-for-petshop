@@ -38,7 +38,7 @@
 			</div>
 			<div class="navigation">
 				<ul>
-					<li><a href="catalogue.php">Catalogue</a></li>
+					<li><a href="home.php">Back to Home</a></li>
 					<li><a href="#">Information on pets</a></li>
 					<li><a href="#">Useful links</a></li>
 					<li><a href="about.php">About us</a></li>
@@ -75,13 +75,12 @@
 						<h4>Products</h4>
 					</div>
 					<div id="main-display">
-						<h6>Featured Pet Food</h6>
+						<h6>All products</h6>
 						<?php
-							$featuredFood = new DisplayProduct($dbconn);
-							$featuredFood->getFeaturedProducts("SELECT * FROM product WHERE productID = 2 OR productID = 9 OR productID = 15
-							OR productID = 17 OR productID = 22;");
+							$catalogue = new DisplayProduct($dbconn);
+							$catalogue->getFeaturedProducts("SELECT * FROM product;");
 						
-							foreach($featuredFood->featuredProducts as $val){
+							foreach($catalogue->featuredProducts as $val){
 								print_r(
 									'<div class="home-product">
 										<a href="product.php?id='.$val[0].'"><article class="prod-top-section>
@@ -93,27 +92,8 @@
 											<span class="prod-price">£'.$val[3].'</span>
 										</article></a>
 									</div>');				
-							}	
-						?>
-						<h6>Featured Toys</h6>
-						<?php 
-							$featuredToys = new DisplayProduct($dbconn);
-							$featuredToys->getFeaturedProducts("SELECT * FROM product WHERE productID = 38 OR productID = 41 OR productID = 31
-							OR productID = 33 OR productID = 42;");
-							foreach($featuredToys->featuredProducts as $val){
-								print_r(
-									'<div class="home-product">
-										<a href="product.php?id='.$val[0].'"><article class="prod-top-section>
-											<h6 class="prod-title">'.$val[1].'</h6>
-											<span class="prod-brand">by '.$val[2].'</span>
-										</article>
-										<article class="prod-bottom-section">	
-											<img src='.$val[4].' alt="'.$val[1].'">	
-											<span class="prod-price">£'.$val[3].'</span>
-										</article></a>
-									</div>');				
-							}
-						?>
+                            }
+                            ?>
 					</div>
 				</div>
 			</div>
@@ -136,4 +116,3 @@
 
 </body>
 </html>
-

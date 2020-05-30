@@ -22,10 +22,7 @@
 				</div>
 				<div class="buttons">
 					<a href="#">Login</a>
-					<a href="about.php">About</a>
-					<a href="contact.php">Contact us</a>
 					<a href="#">Shopping Basket</a>
-		
 				</div>	
 			</div>
 			<div class="navigation">

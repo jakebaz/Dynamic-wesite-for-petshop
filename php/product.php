@@ -60,8 +60,6 @@
 						echo '<a href="logout.php">Logout</a>';
 					}
 					?>
-                    <a href="about.php">About</a>
-                    <a href="contact.php">Contact us</a>
 					<a href="#">Shopping Basket</a>					
 				</div>	
 			</div>
