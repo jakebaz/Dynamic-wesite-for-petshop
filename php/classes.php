@@ -178,30 +178,16 @@ class DisplayProduct{
             $productStmt->execute();
             $result = $productStmt->get_result();
             while($row = $result->fetch_row()){
+                $prodID = $row[0];
                 $prodName = $row[1];
                 $prodBrand = $row[2];
                 $prodPrice = $row[6];
                 $prodImg = $row[7];
-                $product = [$prodName, $prodBrand, $prodPrice, $prodImg]; //append required data to an array
+                $product = [$prodID, $prodName, $prodBrand, $prodPrice, $prodImg]; //append required data to an array
                 array_push($this->featuredProducts, $product);//append that array to another array that can be displayed
             }
         }    
     }
-   /*
-    public function getFeaturedToys(){
-        $queryToyProducts = "SELECT * FROM product WHERE productID = 38 OR productID = 41 OR productID = 31
-        OR productID = 33 OR productID = 42;"
-        $toyStmt = $this->dbconn->stmt_init();
-        if(!$toyStmt->prepare($queryToyProducts)){
-           echo "<div class='register-error'>Nothing to show</div>";
-           exit();
-        } else{
-            $toyStmt->execute();
-            $toyResult = $toyStmt->get_result();
-            while($row = $result->fetch_row()){
-                $toyBrand
-            }
-        }
-    }   */     
+
 }    
   

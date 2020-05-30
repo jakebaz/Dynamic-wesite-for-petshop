@@ -359,9 +359,10 @@ body{
 }
 
 .main-product{
-	position: absolute;
+	position: relative;
 	display: inline-block;
 	width: 75%;
+	padding-left: 100px;
 }
 
 .product-left {
@@ -382,7 +383,7 @@ body{
 .product-right {
 	position: absolute;
 	display: inline-block;
-	padding: 50px 20px 20px 20px;
+	padding: 80px 30px 30px 50px;
 }
 
 .buy-section {

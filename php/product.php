@@ -1,3 +1,34 @@
+<?php
+	include('../core/connect.php');
+
+	if(isset($_GET['id'])){
+		$id = $_GET['id'];
+		$id = preg_replace('#[^0-9]#i','', $_GET['id']);
+	} else{
+		echo 'Product does not exist 1';
+		exit();
+	}
+
+	$query = $dbconn->query("SELECT * FROM product WHERE productID ='$id';");
+	$product = $query->fetch_assoc();
+	if(empty($product)){
+		echo 'Product does not exist 2';
+		exit();
+	} else{
+		//get all product details
+		$id = $product['productID'];
+		$productName = $product['productName'];
+		$productBrand = $product['productBrand'];
+		$productDescription = $product['productDescription'];
+		$stock = $product['stock'];
+		$productCategory = $product['idCategory'];
+		$price = $product['price'];
+		$image = $product['productImage'];
+		$animalCategory = $product['idAnimal'];
+	} 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,32 +65,25 @@
 					<a href="#">Shopping Basket</a>					
 				</div>	
 			</div>
-			<div class="navigation">
-				<ul>
-					<li><a href="#">Dogs</a></li>
-					<li><a href="#">Cats</a></li>
-					<li><a href="#">Small pets</a></li>
-					<li><a href="#">Fish</a></li>
-					<li><a href="#">Reptiles</a></li>
-					<li><a href="#">Birds</a></li>
-				</ul>
-			</div>
+
             <div class="main-product">
-                <div class="product-left">                    
-                    <img src="../images/Logo.png" alt="Placeholder Image">
+                <div class="product-left">  
+					<img src="<?php echo $image;?>" alt="product image">                 
+                    <!--<?php echo $image?> -->
                 </div>
                 <div class="product-right">
-                    <h3>Product Name</h3>
-                    <p>by Brand Name</p>
+                    <h3><?php echo $productName;?></h3>
+                    <p>by <?php echo $productBrand;?></p>
                     <p>No reviews yet</p>
                     <div class="buy-section">
-                        <h6>£12.99</h6>
+                        <h6><?php echo '£'.$price;?></h6>
                         <button>Add to cart</button>
-                        <p>in/out of stock</p>
+                        <p><?php if($stock < 1){echo 'Out of stock';} else{echo 'Stock: '.$stock;}?></p>
                         
                     </div>
                     <div class="product-description">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore provident eaque rem molestiae animi facilis unde necessitatibus natus? Voluptates, recusandae. Tenetur placeat nam ea voluptates, nemo eligendi excepturi tempora dolorum!</p>
+						<h6>Description</h6>
+                        <p><?php echo $productDescription?></p>
                     </div>
                 </div>
             </div>
