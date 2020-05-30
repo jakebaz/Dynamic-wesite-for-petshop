@@ -37,12 +37,11 @@
 			</div>
 			<div class="navigation">
 				<ul>
-					<li><a href="#">Dogs</a></li>
-					<li><a href="#">Cats</a></li>
-					<li><a href="#">Small pets</a></li>
-					<li><a href="#">Fish</a></li>
-					<li><a href="#">Reptiles</a></li>
-					<li><a href="#">Birds</a></li>
+					<li><a href="home.php">Back to Home</a></li>
+					<li><a href="#">Information on pets</a></li>
+					<li><a href="#">Useful links</a></li>
+					<li><a href="about.php">About us</a></li>
+					<li><a href="contact.php">Contact us</a></li>
 				</ul>
 			</div>
 			<div class="main">        
