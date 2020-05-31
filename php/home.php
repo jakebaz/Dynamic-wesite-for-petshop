@@ -36,43 +36,21 @@
 					
 				</div>	
 			</div>
-			<div class="navigation">
-				<ul>
-					<li><a href="catalogue.php">Catalogue</a></li>
-					<li><a href="#">Information on pets</a></li>
-					<li><a href="#">Useful links</a></li>
-					<li><a href="about.php">About us</a></li>
-					<li><a href="contact.php">Contact us</a></li>
-				</ul>
-			<div id="product-filter">
-				<div id="animal-filter">
-						<h6>Filter by animal</h6>
-						<ul>
-							<li><label>Dogs </label><input type="checkbox" class="filter-checkbox"></li>
-							<li><label>Cats </label><input type="checkbox" class="filter-checkbox"></li>
-							<li><label>Small pets </label><input type="checkbox" class="filter-checkbox"></li>
-							<li><label>Fish </label><input type="checkbox" class="filter-checkbox"></li>
-							<li><label>Reptiles </label><input type="checkbox" class="filter-checkbox"></li>
-							<li><label>Birds </label><input type="checkbox" class="filter-checkbox"></li>
-						</ul>
-					</div>
-					<div id="category-filter">
-						<h6>Filter by category</h6>
-						<ul>
-							<li><label>Food </label><input type="checkbox" class="filter-checkbox"></li>
-							<li><label>Toys </label><input type="checkbox" class="filter-checkbox"></li>
-							<li><label>Bedding </label><input type="checkbox" class="filter-checkbox"></li>
-							<li><label>Care </label><input type="checkbox" class="filter-checkbox"></li>
-							<li><label>Housing </label><input type="checkbox" class="filter-checkbox"></li>
-							<li><label>Clothing </label><input type="checkbox" class="filter-checkbox"></li>
-						</ul>
-					</div> 
+			<div class="left-pane">
+				<div class="navigation">
+					<ul>
+						<li><a href="catalogue.php">Catalogue</a></li>
+						<li><a href="#">Information on pets</a></li>
+						<li><a href="#">Useful links</a></li>
+						<li><a href="about.php">About us</a></li>
+						<li><a href="contact.php">Contact us</a></li>
+					</ul>
 				</div>
 			</div>
 			<div class="main">
 				<div class="display-products">
 					<div id="display-header">
-						<h4>Products</h4>
+						<h4>Featured Products</h4>
 					</div>
 					<div id="main-display">
 						<h6>Featured Pet Food</h6>

@@ -63,14 +63,16 @@
 					<a href="#">Shopping Basket</a>					
 				</div>	
 			</div>
-			<div class="navigation">
-				<ul>
-					<li><a href="home.php">Back to Home</a></li>
-					<li><a href="#">Information on pets</a></li>
-					<li><a href="#">Useful links</a></li>
-					<li><a href="about.php">About us</a></li>
-					<li><a href="contact.php">Contact us</a></li>
-				</ul>
+			<div class="left-pane">
+				<div class="navigation">
+					<ul>
+						<li><a href="home.php">Back to Home</a></li>
+						<li><a href="#">Information on pets</a></li>
+						<li><a href="#">Useful links</a></li>
+						<li><a href="about.php">About us</a></li>
+						<li><a href="contact.php">Contact us</a></li>
+					</ul>
+				</div>
 			</div>
             <div class="main-product">
                 <div class="product-left">  

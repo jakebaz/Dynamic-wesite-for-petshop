@@ -27,18 +27,20 @@
 					<a href="#">Shopping Basket</a>
 				</div>	
 			</div>
-			<div class="navigation">
-				<ul>
-					<li><a href="home.php">Back to Home</a></li>
-					<li><a href="#">Information on pets</a></li>
-					<li><a href="#">Useful links</a></li>
-					<li><a href="about.php">About us</a></li>
-					<li><a href="contact.php">Contact us</a></li>
-				</ul>
+			<div class="left-pane">
+				<div class="navigation">
+					<ul>
+						<li><a href="catalogue.php">Catalogue</a></li>
+						<li><a href="#">Information on pets</a></li>
+						<li><a href="#">Useful links</a></li>
+						<li><a href="about.php">About us</a></li>
+						<li><a href="contact.php">Contact us</a></li>
+					</ul>
+				</div>
 			</div>
 			<div class="main">
-                <div class="login-form">
-                    <form action="register.php" method="POST" action="#" class="web-form">
+                <div class="web-form">
+                    <form action="register.php" method="POST" action="#" id="register-form">
                         <h1>Register</h1>
 						<p>Email address:</p>
                         <input type="text" name="email" placeholder="Email address..." required>
@@ -55,7 +57,7 @@
                         <br/>
 						<button type="submit" name="submit-button" class="submit-button">Register</button>
 						<br/>
-						<a class="web-form" href="login_form.php">Already have an account? Sign in</a>
+						<a class="web-form" href="login_form.php" id="login-link">Already have an account? Sign in</a>
 					</form>
                 </div>
 			</div>

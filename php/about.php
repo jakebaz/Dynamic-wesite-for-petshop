@@ -33,14 +33,16 @@
 					
 				</div>	
 			</div>
-			<div class="navigation">
-				<ul>
-					<li><a href="home.php">Back to Home</a></li>
-					<li><a href="#">Information on pets</a></li>
-					<li><a href="#">Useful links</a></li>
-					<li><a href="about.php">About us</a></li>
-					<li><a href="contact.php">Contact us</a></li>
-				</ul>
+			<div class="left-pane">
+				<div class="navigation">
+					<ul>
+						<li><a href="catalogue.php">Catalogue</a></li>
+						<li><a href="#">Information on pets</a></li>
+						<li><a href="#">Useful links</a></li>
+						<li><a href="about.php">About us</a></li>
+						<li><a href="contact.php">Contact us</a></li>
+					</ul>
+				</div>
 			</div>
 			<div class="about-main">
 				<div class="top-section">
@@ -64,29 +66,28 @@
 					including Rabbits, guinea pigs and Rats.</p>
 				</div>
 				<h3>Meet Our Clientele</h3>
-					<div class="about_images">
-						
-						<div class="imgs-left">
-							<figure>
-								<img src="../images/about_images/dexter.JPG" alt="Smiling dog" id="dexter">
-								<figcaption>Dexter</figcaption>
-							</figure>
-							<figure>
-								<img src="../images/about_images/sooty.PNG" alt="Cat relaxing in the sun" id="sooty">
-								<figcaption>Sooty</figcaption>
-							</figure>
-						</div>
-						<div class="imgs-right">
-							<figure>
-								<img src="../images/about_images/albert.jpeg" alt="Rabbit looking at the camera" id="albert">
-								<figcaption>Albert</figcaption>
-							</figure>
-							<figure>
-								<img src="../images/about_images/leila.JPG" alt="Rabbit enjoying the sunset" id="albert">
-								<figcaption>Leila</figcaption>
-							</figure>
-						</div>
-					</div>	
+				<div class="about_images">		
+					<div class="imgs-left">
+						<figure>
+							<img src="../images/about_images/dexter.JPG" alt="Smiling dog" id="dexter">
+							<figcaption>Dexter</figcaption>
+						</figure>
+						<figure>
+							<img src="../images/about_images/sooty.PNG" alt="Cat relaxing in the sun" id="sooty">
+							<figcaption>Sooty</figcaption>
+						</figure>
+					</div>
+					<div class="imgs-right">
+						<figure>
+							<img src="../images/about_images/albert.jpeg" alt="Rabbit looking at the camera" id="albert">
+							<figcaption>Albert</figcaption>
+						</figure>
+						<figure>
+							<img src="../images/about_images/leila.JPG" alt="Rabbit enjoying the sunset" id="albert">
+							<figcaption>Leila</figcaption>
+						</figure>
+					</div>
+				</div>	
 			</div>
 		</div>
 	</div>

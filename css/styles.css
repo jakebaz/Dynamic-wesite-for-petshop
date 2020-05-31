@@ -6,15 +6,12 @@
 	font-size: 16px;
 	color: rgb(75, 75, 75);
 }	
-html, body{
-	height: 100%;
-}
+
 body{
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
-	padding-bottom: 150px;
 }
 
 :focus {
@@ -24,17 +21,12 @@ body{
 .main-wrapper {
 	position: relative;
 	padding-bottom: 150px;
-	height: 62vh;
+	height: auto;
 }
 
 .content-wrapper{
 	margin: 0 auto;
-}
-
-.logo {
-	max-width: 125px;
-	max-height: 125px;
-	padding-left: 50px;
+	position: relative;
 }
 
 .top-banner {
@@ -42,6 +34,14 @@ body{
 	width: 100%;
 	height: 18vh;
 }
+
+
+.logo {
+	max-width: 125px;
+	max-height: 125px;
+	padding-left: 50px;
+}
+
 
 .search-bar {
 	position: absolute;
@@ -117,14 +117,20 @@ body{
 	text-decoration: underline;
 }
 
+.left-pane{
+	float: left;
+	position: relative;
+	width: 250px;
+	height: 100%;
+	text-align: center;
+}
+
 .navigation {
 	position: relative;
-	display: inline-block;
-	background-color: rgb(255, 255, 255);
-	text-align: center;
-	width: 25%;
+	float: left;
+	
+	width: 100%;
 	height: 100%;
-	margin: 0;
 	padding-top: 75px;
 }
 
@@ -134,7 +140,7 @@ body{
 	padding: 20px;
 }
 
-.navigation ul li{
+.left-pane ul li{
 	list-style-type: none;
 	font-size: 1.5em;
 	text-decoration: none;
@@ -145,20 +151,29 @@ body{
 	color: #20940c;
 }
 
+#product-filter{
+	position: relative;
+	margin-left: 70px;
+	width: 60%;
+	height: 300px;
+	padding-top: 500px;
+	z-index: -1;
+}
+
 #animal-filter{
-	border: #3b3b3b solid 1px;
+	position: relative;
+	border: #686868 solid 3px;
 	border-radius: 5px;
-	margin-top: 100px;
-	margin-left: 50px;
-	width: 175px;
+	width: 100%;
+	height: 225px;
 }
 
 #category-filter{
-	border: #3b3b3b solid 1px;
+	border: #686868 solid 3px;
 	border-radius: 5px;
-	margin-top: 25px;
-	margin-left: 50px;
-	width: 175px;
+	margin-top: 50px;
+	width: 100%;
+	height: 225px;
 }
 
 #animal-filter h6{
@@ -169,35 +184,31 @@ body{
 	padding-top: 10px;
 }
 
-
 .main {
-	position: absolute;
-	display: inline-block;
-	width: 70%;
+	position: relative;
 	overflow: auto;
 	padding-bottom: 100px;
+	width: 75%;
+	float: left;
+}
+
+.display-products{
+	float: left;
 }
 
 #main-display h6{
 	padding-left: 20px;
+	clear: both;
 }
 
 .web-form {
 	position: relative;
+	display: inline-block;
 	text-align: center;
 	width: 50%;
 	height: 50%;
-	padding: 20px 50px 50px 50px;
-	left: 70px;
-}
-
-.web-form a{
-	position: relative;
-	margin: 0;
-	padding-right: 140px;
-	min-width: 300px;
-	float: right;
-
+	padding: 40px 50px 50px 50px;
+	margin-left: 100px;
 }
 
 .web-form input {
@@ -231,7 +242,6 @@ body{
 	width: 100%;
 	height: 30%;
 	padding: 5px 15px 5px 15px;
-	font-size: 16px;
 }
 
 .submit-button {
@@ -242,7 +252,6 @@ body{
 	min-width: 125px;
 	padding: 10px;
 	margin-top: 10px;
-	font-size: 16px;
 	font-weight: bold;
 }
 
@@ -251,10 +260,14 @@ body{
 	transition: 400ms;
 }
 
-#create-link {
+.web-form a{
 	position: relative;
-	top: 10px;
-	left: 70px;
+	display: inline-block;
+	padding-top: 10px;
+}
+
+#login-link{
+	margin-left: 0;
 }
 
 .register-error {
@@ -292,7 +305,7 @@ body{
 }
 
 .about-main {
-	position: absolute;
+	position: relative;
 	display: inline-block;
 	width: 70%;
 	padding-top: 40px;
@@ -340,14 +353,6 @@ body{
 	text-align: center;
 	font-weight: bold;
 }
-/*
-.about_images .imgs-left {
-	padding-top: 10px;
-}
-
-.about_images .imgs-right {
-	padding-top: 10px
-}*/
 
 .about_images figure {
 	padding: 20px;
@@ -446,13 +451,15 @@ body{
 }
 
 .footer{
-	position: absolute;
+	position: relative;
 	width: 100%;
 	height: 150px;
 	margin-top: -150px;
 	clear: both;
 	background-image: linear-gradient(#3b3b3b, #181818);
 	bottom: 0;
+	margin-bottom: 0;
+	border: 0;
 }
 
 .footer-address{

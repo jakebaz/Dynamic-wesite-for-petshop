@@ -25,18 +25,20 @@
 					<a href="#">Shopping Basket</a>
 				</div>	
 			</div>
-			<div class="navigation">
-				<ul>
-					<li><a href="home.php">Back to Home</a></li>
-					<li><a href="#">Information on pets</a></li>
-					<li><a href="#">Useful links</a></li>
-					<li><a href="about.php">About us</a></li>
-					<li><a href="contact.php">Contact us</a></li>
-				</ul>
+			<div class="left-pane">
+				<div class="navigation">
+					<ul>
+						<li><a href="catalogue.php">Catalogue</a></li>
+						<li><a href="#">Information on pets</a></li>
+						<li><a href="#">Useful links</a></li>
+						<li><a href="about.php">About us</a></li>
+						<li><a href="contact.php">Contact us</a></li>
+					</ul>
+				</div>
 			</div>
 			<div class="main">
                 <div class="web-form">
-                    <form action="login.php" method="POST">
+                    <form action="login.php" method="POST" id="login-form">
                         <h1>Login</h1>
                         <p>Username:</p>
                         <input type="text" name="username" id="username-in" placeholder="Username..." required>
@@ -44,7 +46,7 @@
                         <input type="password" name="password" id="pass-in" placeholder="Password..." required>
                         <br/>
 						<button type="submit" name="submit-button" class="submit-button">Sign in</button>
-						<a id="create-link" href="register_form.php">Don't have an account? Create one here</a>
+						<br/><a id="create-link" href="register_form.php">Don't have an account? Create one here</a>
 					</form>
 					
                 </div>
