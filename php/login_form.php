@@ -22,7 +22,6 @@
 				</div>
 				<div class="buttons">
 					<a href="#">Login</a>
-					<a href="#">Shopping Basket</a>
 				</div>	
 			</div>
 			<div class="left-pane">
