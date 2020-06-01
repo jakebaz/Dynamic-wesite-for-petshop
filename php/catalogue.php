@@ -45,30 +45,6 @@
 				    	<li><a href="contact.php">Contact us</a></li>
                     </ul>
                 </div>    
-		    	<div id="product-filter">
-			    	<div id="animal-filter">
-				    	<h6>Filter by animal</h6>
-					    <ul>
-					    	<li><label>Dogs </label><input type="checkbox" class="filter-checkbox"></li>
-    						<li><label>Cats </label><input type="checkbox" class="filter-checkbox"></li>
-	    					<li><label>Small pets </label><input type="checkbox" class="filter-checkbox"></li>
-							<li><label>Fish </label><input type="checkbox" class="filter-checkbox"></li>
-		    				<li><label>Reptiles </label><input type="checkbox" class="filter-checkbox"></li>
-			    			<li><label>Birds </label><input type="checkbox" class="filter-checkbox"></li>
-				    	</ul>
-			    	</div>
-					<div id="category-filter">
-	    				<h6>Filter by category</h6>
-		    			<ul>
-		    				<li><label>Food </label><input type="checkbox" class="filter-checkbox"></li>
-			    			<li><label>Toys </label><input type="checkbox" class="filter-checkbox"></li>
-				    		<li><label>Bedding </label><input type="checkbox" class="filter-checkbox"></li>
-						    <li><label>Care </label><input type="checkbox" class="filter-checkbox"></li>
-						    <li><label>Housing </label><input type="checkbox" class="filter-checkbox"></li>
-	    					<li><label>Clothing </label><input type="checkbox" class="filter-checkbox"></li>
-		    			</ul>
-					</div> 
-			    </div>
             </div>
 			<div class="main">
 				<div class="display-products">
@@ -84,14 +60,14 @@
 							foreach($catalogue->featuredProducts as $val){
 								print_r(
 									'<div class="home-product">
-										<a href="product.php?id='.$val[0].'"><article class="prod-top-section>
+										<a href="product.php?id='.$val[0].'"><div class="prod-top-section>
 											<h6 class="prod-title">'.$val[1].'</h6>
 											<span class="prod-brand">by '.$val[2].'</span>
-										</article>
-										<article class="prod-bottom-section">	
+										</div>
+										<div class="prod-bottom-section">	
 											<img src='.$val[4].' alt="'.$val[1].'">	
 											<span class="prod-price">£'.$val[3].'</span>
-										</article></a>
+										</div></a>
 									</div>');				
                             }
                             ?>

@@ -151,39 +151,6 @@ body{
 	color: #20940c;
 }
 
-#product-filter{
-	position: relative;
-	margin-left: 70px;
-	width: 60%;
-	height: 300px;
-	padding-top: 500px;
-	z-index: -1;
-}
-
-#animal-filter{
-	position: relative;
-	border: #686868 solid 3px;
-	border-radius: 5px;
-	width: 100%;
-	height: 225px;
-}
-
-#category-filter{
-	border: #686868 solid 3px;
-	border-radius: 5px;
-	margin-top: 50px;
-	width: 100%;
-	height: 225px;
-}
-
-#animal-filter h6{
-	padding-top: 10px;
-}
-
-#category-filter h6{
-	padding-top: 10px;
-}
-
 .main {
 	position: relative;
 	overflow: auto;
@@ -199,6 +166,26 @@ body{
 #main-display h6{
 	padding-left: 20px;
 	clear: both;
+}
+
+.main article{
+	padding: 10px 20px 20px 20px;
+	margin-top: 20px;
+	background-color: #f1f1f1;
+	border-radius: 5px;
+}
+
+.main article a:hover{
+	color: #2BC448;
+}
+
+.main article h2{
+	font-size: 24px;
+	padding: 10px;
+}
+
+.main article ul li{
+	margin-left: 40px;
 }
 
 .web-form {
@@ -525,13 +512,14 @@ body{
 .footer{
 	position: relative;
 	width: 100%;
-	height: 150px;
-	margin-top: -150px;
+	height: 100px;
+	margin-top: -100px;
 	clear: both;
 	background-image: linear-gradient(#3b3b3b, #181818);
 	bottom: 0;
 	margin-bottom: 0;
 	border: 0;
+	
 }
 
 .footer-address{
@@ -542,9 +530,11 @@ body{
 
 .footer-address h6{
 	color: #ebebeb;
+	font-size: 10px;
 }
 
 .footer-address li{
 	color: #ebebeb;
+	font-size: 10px;
 }
 

@@ -28,7 +28,7 @@
 				<div class="navigation">
 					<ul>
 						<li><a href="catalogue.php">Catalogue</a></li>
-						<li><a href="#">Information on pets</a></li>
+						<li><a href="pet_info.php">Information on pets</a></li>
 						<li><a href="#">Useful links</a></li>
 						<li><a href="about.php">About us</a></li>
 						<li><a href="contact.php">Contact us</a></li>

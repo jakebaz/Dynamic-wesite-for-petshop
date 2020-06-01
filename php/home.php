@@ -39,7 +39,7 @@
 				<div class="navigation">
 					<ul>
 						<li><a href="catalogue.php">Catalogue</a></li>
-						<li><a href="#">Information on pets</a></li>
+						<li><a href="pet_info.php">Information on pets</a></li>
 						<li><a href="#">Useful links</a></li>
 						<li><a href="about.php">About us</a></li>
 						<li><a href="contact.php">Contact us</a></li>
@@ -61,14 +61,14 @@
 							foreach($featuredFood->featuredProducts as $val){
 								print_r(
 									'<div class="home-product">
-										<a href="product.php?id='.$val[0].'"><article class="prod-top-section>
+										<a href="product.php?id='.$val[0].'"><div class="prod-top-section>
 											<h6 class="prod-title">'.$val[1].'</h6>
 											<span class="prod-brand">by '.$val[2].'</span>
-										</article>
-										<article class="prod-bottom-section">	
+										</div>
+										<div class="prod-bottom-section">	
 											<img src='.$val[4].' alt="'.$val[1].'">	
 											<span class="prod-price">£'.$val[3].'</span>
-										</article></a>
+										</div></a>
 									</div>');				
 							}	
 						?>
@@ -80,14 +80,14 @@
 							foreach($featuredToys->featuredProducts as $val){
 								print_r(
 									'<div class="home-product">
-										<a href="product.php?id='.$val[0].'"><article class="prod-top-section>
+										<a href="product.php?id='.$val[0].'"><div class="prod-top-section>
 											<h6 class="prod-title">'.$val[1].'</h6>
 											<span class="prod-brand">by '.$val[2].'</span>
-										</article>
-										<article class="prod-bottom-section">	
+										</div>
+										<div class="prod-bottom-section">	
 											<img src='.$val[4].' alt="'.$val[1].'">	
 											<span class="prod-price">£'.$val[3].'</span>
-										</article></a>
+										</div></a>
 									</div>');				
 							}
 						?>
