@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
 <head>
-	<title>Pet Supplies|Home</title>
+	<title>Pet Supplies|Contact</title>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="pets, pet shop, pet supplies"/>
@@ -27,7 +27,7 @@
 					} else{
 						echo '<a href="profile.php">'.$_SESSION['loggedInUser'].'</a>';
 						echo '<a href="logout.php">Logout</a>';
-						echo '<a href="#">Shopping Basket</a>';
+						echo '<a href="cart.php">Shopping Basket</a>';
 					}
 					?>					
 				</div>	

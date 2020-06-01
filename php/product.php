@@ -1,18 +1,19 @@
 <?php
+	session_start();
 	include('../core/connect.php');
 
 	if(isset($_GET['id'])){
 		$id = $_GET['id'];
 		$id = preg_replace('#[^0-9]#i','', $_GET['id']);
 	} else{
-		echo 'Product does not exist 1';
+		echo 'Product does not exist';
 		exit();
 	}
 
 	$query = $dbconn->query("SELECT * FROM product WHERE productID ='$id';");
 	$product = $query->fetch_assoc();
 	if(empty($product)){
-		echo 'Product does not exist 2';
+		echo 'Product does not exist';
 		exit();
 	} else{
 		//get all product details
@@ -29,7 +30,7 @@
 
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html lang="en">
 <head>
 	<title>Pet Supplies|Product</title>
@@ -38,9 +39,7 @@
 	<meta name="keywords" content="pets, pet shop, pet supplies"/>
 	<meta name="author" content="Jacob Bazin"/>
 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
-	<?php
-		session_start();
-	?>
+
 </head>
 <body>
     <div class="main-wrapper">
@@ -58,7 +57,7 @@
 					} else{
 						echo '<a href="profile.php">'.$_SESSION['loggedInUser'].'</a>';
 						echo '<a href="logout.php">Logout</a>';
-						echo '<a href="#">Shopping Basket</a>';
+						echo '<a href="cart.php">Shopping Basket</a>';
 					}
 					?>							
 				</div>	
@@ -84,9 +83,13 @@
                     <p>by <?php echo $productBrand;?></p>
                     <p>No reviews yet</p>
                     <div class="buy-section">
-                        <h6><?php echo '£'.$price;?></h6>
-                        <button>Add to cart</button>
-                        <p><?php if($stock < 1){echo 'Out of stock';} else{echo 'Stock: '.$stock;}?></p>
+						<form action="cart.php" method="POST" class="add-to-cart-form">
+							<h6><?php echo '£'.$price;?></h6>
+							<input type="hidden" name="prodID" value="<?php echo $id?>" id="prodID"> <!--pass product id to the form without displaying anything on screen-->
+							<input type="submit" name="button" value="Add to cart" id="add-to-cart-button">
+							<p><?php if($stock < 1){echo 'Out of stock';} else{echo 'Stock: '.$stock;}?></p>
+						</form>	
+                        
                         
                     </div>
                     <div class="product-description">

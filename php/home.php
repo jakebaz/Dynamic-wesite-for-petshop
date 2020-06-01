@@ -30,7 +30,7 @@
 					} else{
 						echo '<a href="profile.php">'.$_SESSION['loggedInUser'].'</a>';
 						echo '<a href="logout.php">Logout</a>';
-						echo '<a href="#">Shopping Basket</a>';
+						echo '<a href="cart.php">Shopping Basket</a>';
 					}
 					?>					
 				</div>	

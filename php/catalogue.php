@@ -2,7 +2,7 @@
 <?php include ('classes.php');?>
 <html>
 <head>
-	<title>Pet Supplies|Home</title>
+	<title>Pet Supplies|Catalogue</title>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="pets, pet shop, pet supplies"/>
@@ -30,7 +30,7 @@
 					} else{
 						echo '<a href="profile.php">'.$_SESSION['loggedInUser'].'</a>';
                         echo '<a href="logout.php">Logout</a>';
-                        echo '<a href="#">Shopping Basket</a>';
+                        echo '<a href="cart.php">Shopping Basket</a>';
 					}
 					?>					
 				</div>	

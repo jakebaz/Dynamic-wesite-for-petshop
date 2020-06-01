@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
 <head>
-	<title>Pet Supplies|Home</title>
+	<title>Pet Supplies|About us</title>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="pets, pet shop, pet supplies"/>
@@ -27,7 +27,7 @@
 					} else{
 						echo '<a href="profile.php">'.$_SESSION['loggedInUser'].'</a>';
 						echo '<a href="logout.php">Logout</a>';
-						echo '<a href="#">Shopping Basket</a>';
+						echo '<a href="cart.php">Shopping Basket</a>';
 					}
 					?>		
 				</div>	
@@ -46,7 +46,7 @@
 			<div class="about-main">
 				<div class="top-section">
                 	<h1>About Us!</h1>
-                	<p>We are a new company who loves animals! We aim to be able to give you all of your pet supplies at competitive prices.</p>
+                	<p>We are a new company who love animals! We aim to be able to give you all of your pet supplies at competitive prices.</p>
 				</div>
 				<div class="left-main">
 					<p>Online we have a great selection of pet food, toys and accessories for many different animals including:</p>

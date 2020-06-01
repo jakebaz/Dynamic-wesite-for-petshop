@@ -188,6 +188,106 @@ class DisplayProduct{
             }
         }    
     }
+}
 
-}    
+class Order{
+    public function __construct($dbconn){
+        $this->productName = '';
+        $this->productBrand = '';
+        $this->productPrice = 0;
+        $this->productStock = 0;
+        $this->productImg = '';
+        $this->dbconn = $dbconn;
+        $this->index = 0;
+        $this->inCart = 0;
+        $this->prodID = 0;
+        $this->eachProduct = [];
+    }
+
+    public function retrieveProduct(){
+        $this->prodID = $_POST['prodID'];
+        $sql = "SELECT * FROM product WHERE productID = ?";
+        $sqlStmt = $this->dbconn->stmt_init();
+        if(!$sqlStmt->prepare($sql)){
+            echo 'error';
+            exit();
+        } else{
+            $sqlStmt->bind_param('i', $this->prodID);
+            $sqlStmt->execute();
+            $result = $sqlStmt->get_result();
+            $assoc = mysqli_fetch_assoc($result);
+            $this->productName = $assoc['productName'];
+            $this->productBrand = $assoc['productBrand'];
+            $this->productPrice = $assoc['price'];
+            $this->productStock = $assoc['stock'];
+            $this->productImg = $assoc['productImage'];
+            array_push($this->eachProduct, array($this->productName,  $this->productBrand,  $this->productPrice,  $this->productStock,  $this->productImg));
+        }
+    }
+
+    public function addToCart(){
+        $this->prodID = $_POST['prodID'];
+        if(!isset($_SESSION['cartArr']) || count($_SESSION['cartArr']) < 1){ //check to see if cart is empty or doesn't exist
+            $itemArray = array('product' => $this->prodID, 'quantity' => 1);
+            $_SESSION['cartArr'][0] = $itemArray['product'];
+            $_SESSION['cartArr'][1] = $itemArray['quantity'];
+        } else{ 
+            $productIDs = array_column($_SESSION['cartArr'], 'product');
+            if(in_array($_POST['prodID'], $productIDs)){
+                echo 'product is already in the cart';
+            } else{
+                $count = count($_SESSION['cartArr']);//count = number of products in shopping cart
+                $itemArray = array('product' => $_POST['prodID'], 'quantity' => 1);
+                $_SESSION['cartArr'][$count] = $itemArray;
+            }
+                    /*
+                    print_r($prod);
+                    echo '<br/>';
+                    
+                    if($prod[1] = 'fart'){
+                        echo 'yes';
+                    } else{
+                        echo 'no';
+                    }*/
+
+                    /*if($prod[0][0] == 'product' && $prod[0][1] == $this->prodID){ //if the item is already in the cart add one to the quantity
+                        array_splice($_SESSION['cartArr'], $this->index - 1, 1, array(array('product' => $this->prodID, 'quantity' => $prod['quantity' + 1])));
+                        echo 'Item already in cart, 1 added to quantity'; 
+                        exit();                 
+                    } else{
+                        array_push($_SESSION['cartArr'], array('product' => $this->prodID, 'quantity' => 1));
+                        echo 'Item added to cart 2';
+                        exit();
+                    }*/
+                }
+            }
+            
+    
+    
+
+    public function emptyCart(){
+        unset($_SESSION['cartArr']);
+    }
+
+    public function displayProducts($productImg, $productName, $productBrand, $productPrice, $quantity){
+        if(!isset($_SESSION['cartArr']) || count($_SESSION['cartArr']) < 1){ //if Cart SESSION does not exist or is empty echo shopping cart is empty
+            echo 'There are no items in your cart';
+        } else{
+            $this->eachProduct = '
+            <tr>
+                <td>'.$productImg.'</td>
+                <td>'.$productName.'</td>
+                <td>'.$productBrand.'</td>
+                <td>'.$productPrice.'</td>
+                <td>'.$quantity.'</td>
+            </tr>';
+            }
+        }
+    
+
+    public function clearCart(){
+        unset($_SESSION['cartArr']);
+    }
+}
+
   
