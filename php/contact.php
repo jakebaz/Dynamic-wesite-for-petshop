@@ -20,7 +20,7 @@
 				$msg = 'Could not find the email address provided.';
 			} else{
 				//set mail parameters
-				$sendTo = 'bh56xo@student.sunderland.ac.uk';
+				$sendTo = 'bh56xo@student.sunderland.ac.uk'; //change this to your own email if you would like to test it
 				$subject = 'Contact Request';
 				$body = '<h2>Contact Request</h2>
 						<h4>Name: </h4><br/>
