@@ -202,6 +202,7 @@ class Order{
         $this->inCart = 0;
         $this->prodID = 0;
         $this->eachProduct = [];
+        $this->itemArray = [];
     }
 
     public function retrieveProduct(){
@@ -216,55 +217,37 @@ class Order{
             $sqlStmt->execute();
             $result = $sqlStmt->get_result();
             $assoc = mysqli_fetch_assoc($result);
+            //print_r('assoc: '.$assoc['productName']);
             $this->productName = $assoc['productName'];
             $this->productBrand = $assoc['productBrand'];
             $this->productPrice = $assoc['price'];
             $this->productStock = $assoc['stock'];
             $this->productImg = $assoc['productImage'];
-            array_push($this->eachProduct, array($this->productName,  $this->productBrand,  $this->productPrice,  $this->productStock,  $this->productImg));
+            array_push($this->eachProduct, array($assoc['productName'], $assoc['productBrand'], $assoc['price'], $assoc['stock'], $assoc['productImage']));
+            //print_r($this->eachProduct);
         }
     }
 
-    public function addToCart(){
-        $this->prodID = $_POST['prodID'];
+    public function addToCart($productID){
+        global $itemArray;
+        $this->prodID = $productID;
         if(!isset($_SESSION['cartArr']) || count($_SESSION['cartArr']) < 1){ //check to see if cart is empty or doesn't exist
             $itemArray = array('product' => $this->prodID, 'quantity' => 1);
-            $_SESSION['cartArr'][0] = $itemArray['product'];
-            $_SESSION['cartArr'][1] = $itemArray['quantity'];
+            $_SESSION['cartArr'] = array($itemArray);
+            unset($itemArray);//unset item array ready for the next time user adds anothr item to basket
         } else{ 
             $productIDs = array_column($_SESSION['cartArr'], 'product');
-            if(in_array($_POST['prodID'], $productIDs)){
-                echo 'product is already in the cart';
+            if(in_array($this->prodID, $productIDs)){//check to see if the item is already in the cart
+                return null; //return false so we can echo error message on product page
             } else{
                 $count = count($_SESSION['cartArr']);//count = number of products in shopping cart
-                $itemArray = array('product' => $_POST['prodID'], 'quantity' => 1);
-                $_SESSION['cartArr'][$count] = $itemArray;
+                $itemArray = array('product' => $this->prodID, 'quantity' => 1);
+                array_push($_SESSION['cartArr'], $itemArray);
+                unset($itemArray);//unset item array ready for the next time user adds anothr item to basket
             }
-                    /*
-                    print_r($prod);
-                    echo '<br/>';
-                    
-                    if($prod[1] = 'fart'){
-                        echo 'yes';
-                    } else{
-                        echo 'no';
-                    }*/
-
-                    /*if($prod[0][0] == 'product' && $prod[0][1] == $this->prodID){ //if the item is already in the cart add one to the quantity
-                        array_splice($_SESSION['cartArr'], $this->index - 1, 1, array(array('product' => $this->prodID, 'quantity' => $prod['quantity' + 1])));
-                        echo 'Item already in cart, 1 added to quantity'; 
-                        exit();                 
-                    } else{
-                        array_push($_SESSION['cartArr'], array('product' => $this->prodID, 'quantity' => 1));
-                        echo 'Item added to cart 2';
-                        exit();
-                    }*/
-                }
-            }
+        }
+    }
             
-    
-    
-
     public function emptyCart(){
         unset($_SESSION['cartArr']);
     }

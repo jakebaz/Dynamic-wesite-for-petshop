@@ -4,7 +4,7 @@ session_start();
 
 <html>
 <head>
-	<title>Pet Supplies|Home</title>
+	<title>Pet Supplies|Pet Info</title>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="pets, pet shop, pet supplies"/>
@@ -39,7 +39,7 @@ session_start();
 					<ul>
                         <li><a href="home.php">Back to home</a></li>
 						<li><a href="catalogue.php">Catalogue</a></li>
-						<li><a href="#">Useful links</a></li>
+						<li><a href="useful_links.php">Useful links</a></li>
 						<li><a href="about.php">About us</a></li>
 						<li><a href="contact.php">Contact us</a></li>
 					</ul>

@@ -1,13 +1,11 @@
 <?php
 	session_start();
 	include('../core/connect.php');
+	include('classes.php');
 
 	if(isset($_GET['id'])){
 		$id = $_GET['id'];
 		$id = preg_replace('#[^0-9]#i','', $_GET['id']);
-	} else{
-		echo 'Product does not exist';
-		exit();
 	}
 
 	$query = $dbconn->query("SELECT * FROM product WHERE productID ='$id';");
@@ -28,6 +26,21 @@
 		$animalCategory = $product['idAnimal'];
 	} 
 
+	$item = new Order($dbconn);
+	if(isset($_POST['prodID'])){
+		$itemArray = array();
+        $item->retrieveProduct();
+		$item->addToCart($_POST['prodID']);
+		
+		if(isset($_POST['delete'])){
+			$sql = $dbconn->query("DELETE FROM product WHERE productID = ".$_GET['id'].";");
+			$sqlCheck = $dbconn->query("SELECT * FROM product WHERE productID = ".$_GET['id'].";");
+			$sqlCheckAssoc = $sqlCheck->fetch_assoc();
+			if (empty($sqlCheckAssoc)){
+				echo '<div class="item-deleted">Item has been removed from the database</div>';
+			}
+		}
+	}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -67,7 +80,7 @@
 					<ul>
 						<li><a href="home.php">Back to Home</a></li>
 						<li><a href="pet_info.php">Information on pets</a></li>
-						<li><a href="#">Useful links</a></li>
+						<li><a href="useful_links.php">Useful links</a></li>
 						<li><a href="about.php">About us</a></li>
 						<li><a href="contact.php">Contact us</a></li>
 					</ul>
@@ -83,14 +96,29 @@
                     <p>by <?php echo $productBrand;?></p>
                     <p>No reviews yet</p>
                     <div class="buy-section">
-						<form action="cart.php" method="POST" class="add-to-cart-form">
+
+						<form method="POST" class="add-to-cart-form">
 							<h6><?php echo '£'.$price;?></h6>
 							<input type="hidden" name="prodID" value="<?php echo $id?>" id="prodID"> <!--pass product id to the form without displaying anything on screen-->
-							<input type="submit" name="button" value="Add to cart" id="add-to-cart-button">
-							<p><?php if($stock < 1){echo 'Out of stock';} else{echo 'Stock: '.$stock;}?></p>
-						</form>	
-                        
-                        
+							<?php 
+							if($_SESSION['loggedInUser'] == 'admin'){
+								echo '<input type="submit" name="delete" value="Delete" id="delete-button">';
+							}
+
+							if($stock >= 1){
+								echo '<input type="submit" name="button" value="Add to cart" id="add-to-cart-button">';
+								echo '<p>In stock: '.$stock.'</p>';
+								} else{
+									echo '<p>Out of stock</p>';
+								} 
+								if(isset($_POST['prodID'])){
+									if($item->addToCart($dbconn) == null){
+										echo '<div class="add-to-cart-error">This product is already in your cart</div>';
+									} else{
+										echo '<div class="add-to-cart-success">Item added to basket</div>';
+									}
+								}?>
+						</form>	  
                     </div>
                     <div class="product-description">
 						<h6>Description</h6>

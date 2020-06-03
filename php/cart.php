@@ -7,15 +7,10 @@ error_reporting(E_ALL);
     include('classes.php');
 
     $item = new Order($dbconn);
-    if(isset($_POST['prodID'])){
-        $item->retrieveProduct();
-        $item->addToCart();
-    }
 
     if(isset($_POST['clear-cart'])){
         $item->clearCart();
     }
-
     
 ?>
 
@@ -55,7 +50,7 @@ error_reporting(E_ALL);
 					<ul>
 						<li><a href="catalogue.php">Catalogue</a></li>
 						<li><a href="pet_info.php">Information on pets</a></li>
-						<li><a href="#">Useful links</a></li>
+						<li><a href="useful_links.php">Useful links</a></li>
 						<li><a href="about.php">About us</a></li>
 						<li><a href="contact.php">Contact us</a></li>
 					</ul>
@@ -63,31 +58,40 @@ error_reporting(E_ALL);
 			</div>
 			<div class="main">
                 <div class="cart-main">
-                    <div id="display-header"></div>
+                    <div id="cart-header">
                         <h1>My Cart</h1>
                     </div>
                     <div class="cart-products">
                         <?php
                             if(isset($_SESSION['cartArr'])){
-                                foreach($_SESSION['cartArr'] as $k => $v){
+                                print_r($_SESSION['cartArr']);
+                                /*foreach($_SESSION['cartArr'] as $k => $v){
+                                    print_r($item->eachProduct);
                                     print_r('<div class="each-product style={background-color:#b8b8b8>
                                     <img src='.$item->eachProduct[0][4].'><br/>'.
                                     $item->eachProduct[0][0].'<br/>'.
                                     $item->eachProduct[0][1].'<br/>'.
                                     'Price: £'.$item->eachProduct[0][2].'<br/>
-                                     </div>');
+                                     </div>');*/
 
                                 } 
-                            } else{
-                                echo '<h1>Your cart is empty</h1>'; 
+                             else{
+                                echo '<h1 id="empty-cart">Your cart is empty</h1>'; 
                             }  
                         ?>    
                     </div>
                     <div class="order">
-                        <form method="POST">
-                            <input type="submit" name="clear-cart" value="Clear cart" id="clear-cart">
-                            <input type="submit" name="place-order" value="Place order" id="add-to-cart-button">
-                        </form>
+                        <?php
+                        if(isset($_SESSION['cartArr'])){
+                            echo '
+                            <form method="POST">
+                                <input type="submit" name="clear-cart" value="Clear cart" id="clear-cart">
+                                <input type="submit" name="place-order" value="Place order" id="add-to-cart-button">
+                            </form>';
+                            if(isset($_POST['place-order'])){
+                                header('Location: order_success.php');
+                            }
+                        } ?>
                     </div>
                 </div>
 			</div>
@@ -108,4 +112,3 @@ error_reporting(E_ALL);
 	</footer>
 </body>	
 </html>
-

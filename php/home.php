@@ -1,5 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<?php include ('classes.php');?>
+<?php 
+session_start();
+include ('classes.php');
+?>
 <html>
 <head>
 	<title>Pet Supplies|Home</title>
@@ -10,9 +13,6 @@
 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="../js/script.js"></script>
-	<?php
-		session_start();
-	?>
 </head>
 <body>
 	<div class="main-wrapper">
@@ -40,7 +40,7 @@
 					<ul>
 						<li><a href="catalogue.php">Catalogue</a></li>
 						<li><a href="pet_info.php">Information on pets</a></li>
-						<li><a href="#">Useful links</a></li>
+						<li><a href="useful_links.php">Useful links</a></li>
 						<li><a href="about.php">About us</a></li>
 						<li><a href="contact.php">Contact us</a></li>
 					</ul>

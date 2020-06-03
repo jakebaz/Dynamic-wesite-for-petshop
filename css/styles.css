@@ -188,6 +188,24 @@ body{
 	margin-left: 40px;
 }
 
+#useful-links{
+	padding: 40px;
+}
+
+#useful-links h1{
+	font-weight: bold;
+	font-size: 24px;
+}
+
+#useful-links article{
+	padding: 20px;
+}
+#useful-links ul li{
+	list-style-type: none;
+	font-size: 18px;
+	font-weight: bold;
+}
+
 .web-form {
 	position: relative;
 	display: inline-block;
@@ -360,6 +378,12 @@ body{
 	padding-top: 15px;
 }
 
+.contact-error{
+	color: #d10606;
+	font-weight: bold;
+	padding-top: 15px;
+}
+
 .main-product{
 	position: relative;
 	width: 75%;
@@ -454,13 +478,32 @@ body{
 	font-weight: bold;
 }
 
-
 #add-to-cart-button:hover{
 	background-color: #2BC448;
 	transition: 400ms;
 }
 
-#display-header h1{
+#delete-button{
+	border: #bb3632 solid 3px;
+	border-radius: 25px;
+	cursor: pointer;
+	min-width: 110px;
+	padding: 10px;
+	margin-top: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#delete-button:hover{
+	background-color: rgb(255, 134, 134);
+	transition: 400ms;
+}
+
+#cart-header{
+	padding: 40px 0 20px 20px;
+}
+
+#cart-header h1{
 	font-size: 2em;
 }
 
@@ -507,6 +550,22 @@ body{
 #empty-cart{
 	text-align: center;
 	font-size: 1.2em;
+}
+
+.add-to-cart-error{
+	font-weight: bold;
+	color: #bb3632;
+}
+
+.add-to-cart-success{
+	font-weight: bold;
+	color: #20940c;
+}
+
+.order-placed{
+	font-weight: bold;
+	color: #20940c;
+	padding-top: 10px;
 }
 
 .footer{
