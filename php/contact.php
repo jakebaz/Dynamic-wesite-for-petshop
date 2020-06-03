@@ -100,7 +100,7 @@
                     <label for="userMail">Email:</label>
                     <input type="text" name="userMail" placeholder="Email address..." value="<?php echo isset($_POST['userMail']) ? $email : '';?>" required>
                     <label for="message">Message:</label>
-                    <textarea name="message" placeholder="Message..." value="<?php echo isset($_POST['message']) ? $message : '';?>" required></textarea>
+                    <textarea rows="5" cols="50" name="message" placeholder="Message..." value="<?php echo isset($_POST['message']) ? $message : '';?>" required></textarea>
 					<button type="submit" name="submit" class="submit-button">Submit</button>
 					<?php if ($msg != ''): ?>
 						<div class="<?php echo $msgClass;?>"><?php echo $msg; ?></div>
